@@ -64,7 +64,7 @@ fun MessageInput(onMessageSend: (String) -> Unit) {
             onMessageSend(message)
             message = ""
         }) {
-            Icon(imageVector = Icons.Default.Share, contentDescription = "Search")
+            Icon(imageVector = Icons.Default.Search, contentDescription = "Search")
         }
     }
 
