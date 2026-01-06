@@ -2,9 +2,12 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    id("com.google.gms.google-services") version "4.4.2"
+    id("com.google.gms.google-services") version "4.4.4" apply false
+
+
 
 }
+
 
 android {
     namespace = "com.example.askmeanything"
@@ -49,15 +52,16 @@ dependencies {
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.compose.ui)
     implementation(libs.androidx.compose.material3)
-    implementation("androidx.compose.ui:ui:1.7.0") // core Compose UI
-    implementation("androidx.compose.material3:material3:1.2.0") // Material3
-    implementation("androidx.compose.ui:ui-tooling-preview:1.7.0") // for @Preview
+    implementation("androidx.compose.ui:ui:1.7.0")
+    implementation("androidx.compose.material3:material3:1.2.0")
+    implementation("androidx.compose.ui:ui-tooling-preview:1.7.0")
     debugImplementation("androidx.compose.ui:ui-tooling:1.7.0")
+    implementation("com.google.firebase:firebase-analytics")
+    implementation(platform("com.google.firebase:firebase-bom:34.7.0"))
     implementation("com.google.ai.client.generativeai:generativeai:0.9.0")
 
-    // Firebase Gemini AI
-    implementation(platform("com.google.firebase:firebase-bom:34.7.0"))
-    implementation("com.google.firebase:firebase-ai")
+
+
 
     // Lifecycle + Coroutines
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.0")
